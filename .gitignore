@@ -1,0 +1,21 @@
+# Node
+npm-debug.log
+node_modules
+.DS_Store
+Thumbs.db
+.idea/
+*~
+log/
+*.log
+vendors
+composer.lock
+vendor
+
+_product_generator/node_modules
+_product_generator/output/**
+_product_generator/products/**
+_product_generator/downloads/**
+_mockup_generator/mockups/**
+_mockup_generator/products/**
+_mockup_generator/output/**
+_shopify_app/server/images
