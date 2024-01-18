@@ -1,0 +1,27 @@
+[
+  {
+    "name": "JavaScript",
+    "emoji": "🤗",
+    "background": "#606c38"
+  },
+  {
+    "name": "HTML & CSS",
+    "emoji": "😉",
+    "background": "#283618"
+  },
+  {
+    "name": "Node.js",
+    "emoji": "🫠",
+    "background": "#fefae0"
+  },
+  {
+    "name": "Vue.js",
+    "emoji": "😍",
+    "background": "#dda15e"
+  },
+  {
+    "name": "React.js",
+    "emoji": "🤫",
+    "background": "#bc6c25"
+  }
+]
