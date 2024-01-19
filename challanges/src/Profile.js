@@ -3,7 +3,7 @@ const skills = require("./skills.json");
 const Profile = () => {
   return (
     <div className="container">
-      <p>Challange #1: User Profile</p>
+      <p className="title">Challange #1: User Profile</p>
       <div className="card">
         <div className="data">
           <Intro />

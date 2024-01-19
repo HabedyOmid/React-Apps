@@ -23,6 +23,10 @@ body {
   margin-bottom: 40px;
 }
 
+.title {
+  margin-bottom: 25px;
+}
+
 .steps {
   width: 600px;
   background-color: #f7f7f7;
@@ -148,12 +152,38 @@ h1 {
 }
 
 
+button,
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.counter {
+  margin-bottom: 15px;
+}
+
 .counter .counter__steps,
 .counter .counter__count {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
+}
+
+.counter__steps {
+  flex-direction: column;
+}
+
+.counter__steps label {
+  color: #414141;
+  margin-bottom: 10px;
+}
+.counter__steps-range {
+  width: 250px;
 }
 
 .counter button {
@@ -172,8 +202,47 @@ h1 {
   margin: 0 15px;
 }
 
+.counter__steps-input {
+  height: 36px;
+  padding: 0 10px;
+  margin: 0 15px;
+}
+
 .counter__output {
   margin-top: 20px;
   text-align: center;
   font-weight: bold;
+}
+
+.flashcards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.flashcards div {
+  border: 1px solid #e7e7e7;
+  background-color: #f7f7f7;
+  border-radius: 7px;
+  aspect-ratio: 2 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+}
+
+div.selected {
+  border: 1px solid #e03131;
+  background-color: #e03131;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+button.danger {
+  background-color: #e03131;
+  color: #fff;
+  margin: 0 auto;
 }

@@ -1,43 +1,91 @@
 import { useState } from "react"
 
-const messages = [
-  "Learn React ⚛️",
-  "Apply for jobs 💼",
-  "Invest your new income 🤑",
-];
-
+const items = [
+  {
+    id: 1,
+    description: 'one',
+    quantity: 2,
+    packed: false
+  },
+  {
+    id: 2,
+    description: 'two',
+    quantity: 2,
+    packed: true
+  },
+  {
+    id: 3,
+    description: 'thre',
+    quantity: 2,
+    packed: false
+  }
+]
 const App = () => {
-  const [step, setStep] = useState(1);
-  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className="app">
+      <Logo />
+      <Form />
+      <PackingList />
+      <Stats />
+    </div>
+  )
+}
 
-  const handlePrev = () => {
-    if(step > 1) setStep((s) => s - 1);
-  } 
+const Logo = () => {
+  return <h1>🌴 Far Away 💼</h1>
+}
 
-  const handleNext = () => {
-    if(step < messages.length) setStep((s) => s + 1);
+const Form = () => {
+  const [quantity, setQuantity] = useState(1);
+  const [description, setDescription] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (!quantity || !description) return;
+
+    setQuantity(1);
+    setDescription("");
   }
 
-  return (
-    <>
-      <button onClick={() => setIsOpen((is) => !is)} className="close">&times;</button>
-      { isOpen && (
-        <div className="steps">
-          <div className="numbers">
-            <div className={step >= 1 ? 'active': ''}>1</div>
-            <div className={step >= 2 ? 'active': ''}>2</div>
-            <div className={step >= 3 ? 'active': ''}>3</div>
-          </div>
-
-          <p className="message">Step {step}: { messages[step - 1]}</p>
-          <div className="buttons">
-            <button onClick={handlePrev}>Prev</button>
-            <button onClick={handleNext}>Next</button>
-          </div>
-        </div>
+  return <form onSubmit={handleSubmit} className="add-form">
+    <h3>What you need fro your 😍 trip?</h3>
+    <select onChange={(e) => setQuantity(Number(e.target.value))} value={quantity}>
+      {Array.from({ length: 20 }, (_, i) => i + 1).map((num) =>
+        <option value={num} key={num}>{num}</option>
       )}
-    </>
-  )
+    </select>
+    <input type="text"
+      value={description}
+      onChange={(e) => setDescription(e.target.value)}
+      placeholder="item..">
+    </input>
+    <button>Add</button>
+  </form>
+}
+
+const PackingList = () => {
+  return <div className="list">
+    <ul>
+      {items.map((item) => <Item item={item} key={item.id} />)}
+    </ul>
+  </div>
+}
+
+const Item = (props) => {
+  const { description, quantity, packed } = props.item;
+  return <li>
+    <span className={ packed ? 'active' : '' }>{quantity} {description}</span>
+    <button>❌</button>
+  </li>
+}
+
+const Stats = () => {
+  return <footer className="stats">
+    <em>
+      You have X items on your list, and you already packed X (x%) 💼
+    </em>
+  </footer>
 }
 
 export default App;
