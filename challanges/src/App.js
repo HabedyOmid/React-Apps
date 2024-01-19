@@ -1,6 +1,7 @@
 import Profile from "./Profile"
 import Counter from "./Counter"
 import FlashCard from "./FlashCard"
+import Accordion from "./Accordion"
 
 const App = () => {
   return (
@@ -8,6 +9,7 @@ const App = () => {
       <Profile />
       <Counter />
       <FlashCard />
+      <Accordion />
     </>
   )
 }
