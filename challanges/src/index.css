@@ -158,6 +158,7 @@ input[type="number"],
 input[type="password"],
 input[type="email"],
 input[type="submit"] {
+  margin-top: 20px;
   font-family: inherit;
   font-size: inherit;
 }
@@ -307,4 +308,38 @@ button.danger {
 .accordion-open .accordion-number,
 .accordion-open .accordion-title {
   color: #087f5b;
+}
+
+
+
+.form-control {
+  display: flex;
+  width: 400px;
+  flex-direction: column;
+}
+
+.form-control select,
+.form-control input {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: unset;
+  outline: unset;
+  border: 1px solid #f8f8f8;
+  color: inherit;
+  background: #fff;
+  font-family: inherit;
+  margin-bottom: 20px;
+}
+.form-control select:hover,
+.form-control select:focus,
+.form-control select:active,
+.form-control input:hover,
+.form-control input:focus,
+.form-control input:active {
+  border: 1px solid #777777;
+}
+
+.form-control label {
+  font-size: 13px;
+  margin-bottom: 8px;
 }
