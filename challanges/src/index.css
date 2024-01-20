@@ -151,7 +151,6 @@ h1 {
   font-weight: 500;
 }
 
-
 button,
 input[type="text"],
 input[type="number"],
@@ -248,7 +247,6 @@ button.danger {
   margin: 0 auto;
 }
 
-
 .accordion {
   width: 700px;
   margin: 100px auto;
@@ -309,8 +307,6 @@ button.danger {
 .accordion-open .accordion-title {
   color: #087f5b;
 }
-
-
 
 .form-control {
   display: flex;
