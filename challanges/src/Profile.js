@@ -1,18 +1,15 @@
-const skills = require("./skills.json");
+const skills = require('./skills.json');
 
 const Profile = () => {
   return (
-    <div className="container">
-      <p className="title">Challange #1: User Profile</p>
-      <div className="card">
-        <div className="data">
-          <Intro />
-          <SkillList />
-        </div>
+    <div className="card">
+      <div className="data">
+        <Intro />
+        <SkillList />
       </div>
     </div>
   );
-}
+};
 
 const Intro = () => {
   return (

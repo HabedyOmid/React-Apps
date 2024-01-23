@@ -1,6 +1,4 @@
-
-
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&display=swap');
 
 * {
   margin: 0;
@@ -9,7 +7,7 @@
 }
 
 body {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: 'IBM Plex Mono', sans-serif;
   background-color: #f7f7f7;
   color: #333;
   position: relative;
@@ -108,7 +106,6 @@ h3 {
   line-height: 0;
 }
 
-
 h1 {
   margin-bottom: 12px;
 }
@@ -120,7 +117,7 @@ h1 {
 }
 
 .card::after {
-  content: "";
+  content: '';
   display: block;
 }
 
@@ -152,11 +149,11 @@ h1 {
 }
 
 button,
-input[type="text"],
-input[type="number"],
-input[type="password"],
-input[type="email"],
-input[type="submit"] {
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='email'],
+input[type='submit'] {
   margin-top: 20px;
   font-family: inherit;
   font-size: inherit;
@@ -240,7 +237,6 @@ div.selected {
   font-weight: bold;
 }
 
-
 button.danger {
   background-color: #e03131;
   color: #fff;
@@ -262,7 +258,7 @@ button.danger {
   cursor: pointer;
   border-top: 4px solid #fff;
   border-bottom: 4px solid #fff;
- 
+
   display: grid;
   grid-template-columns: auto 1fr auto;
   column-gap: 24px;

@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-config-recommended", "stylelint-config-prettier"],
+  "plugins": [],
+  "ignoreFiles": ["!src/scss/**/*", "**/*"],
+  "rules": {},
+  "overrides": []
+}
