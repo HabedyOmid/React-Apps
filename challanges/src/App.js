@@ -5,6 +5,8 @@ import Accordion from './Accordion';
 import TipCalculator from './TipCalculator';
 import StarRating from './StarRating';
 import TextExpander from './TextExpander';
+import DateRange from './DateRange';
+import { useState } from 'react';
 
 const App = () => {
   return (
@@ -40,7 +42,7 @@ const App = () => {
       </div>
 
       <div className="container">
-        <p className="title">Challange #6 - Text Expander</p>
+        <p className="title">Challange #7 - Text Expander</p>
         <TextExpander>
           Space travel is the ultimate adventure! Imagine soaring past the stars
           and exploring new worlds. It's the stuff of dreams and science
@@ -69,6 +71,11 @@ const App = () => {
           and robots are constantly venturing out into the cosmos to uncover its
           secrets and push the boundaries of what's possible.
         </TextExpander>
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #8 - Date Range</p>
+        <DateRange />
       </div>
     </>
   );
