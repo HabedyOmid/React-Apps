@@ -27,7 +27,7 @@ export default function CurrencyConverter() {
         }
       };
 
-      if (amount !== 0 || from !== to) {
+      if (from !== to) {
         fetchRate();
       }
     },
@@ -41,10 +41,10 @@ export default function CurrencyConverter() {
       {!isLoading && !error && (
         <>
           <p>
-            {amount} {from} to {to} = <strong>{result.USD}</strong>
-          </p>
-          <p>
-            {result} {to}
+            {amount} {from} to {to} ={' '}
+            <strong>
+              {result} {to}
+            </strong>
           </p>
         </>
       )}
