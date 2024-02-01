@@ -6,7 +6,7 @@ import TipCalculator from './TipCalculator';
 import StarRating from './StarRating';
 import TextExpander from './TextExpander';
 import DateRange from './DateRange';
-import { useState } from 'react';
+import CurrencyConverter from './CurrencyConverter';
 
 const App = () => {
   return (
@@ -76,6 +76,11 @@ const App = () => {
       <div className="container">
         <p className="title">Challange #8 - Date Range</p>
         <DateRange />
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #9 - Currency Converter</p>
+        <CurrencyConverter />
       </div>
     </>
   );
