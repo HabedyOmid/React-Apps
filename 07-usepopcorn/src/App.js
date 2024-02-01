@@ -1,69 +1,38 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import StarRating from './StarRating';
-
-// const moviesData = require('./movies.json');
+import { useMovies } from './useMovies';
+import { useLocalStorageState } from './useLocalStorageState';
+import { useKey } from './useKey';
 const API_KEY = '8ddb70a6';
 
 const average = (arr) =>
   arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
-  const [watched, setWatched] = useState([]);
   const [query, setQuery] = useState('');
-  const [error, setError] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
 
-  const handleSelectMovie = (id) => {
+  // using custom hook, get the data returned
+  const { movies, isLoading, error } = useMovies(query);
+
+  // using custom hook,
+  const [watched, setWatched] = useLocalStorageState([], 'watched_movies');
+
+  function handleSelectMovie(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
-  };
+  }
 
-  const handleDeselectMovie = () => {
+  function handleDeselectMovie() {
     setSelectedId(null);
-  };
+  }
 
-  const handleAddWatchList = (movie) => {
+  function handleAddWatchList(movie) {
     setWatched((prev) => [...prev, movie]);
-  };
+  }
 
-  const handleRemoveWatchList = (id) => {
+  function handleRemoveWatchList(id) {
     setWatched((watched) => watched.filter((movie) => movie.imdbID !== id));
-  };
-
-  useEffect(
-    function () {
-      const fetchMovies = async () => {
-        try {
-          setIsLoading(true);
-          setError('');
-          const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`
-          );
-
-          if (!res.ok) {
-            throw new Error('Something went wrong with fetching movies');
-          }
-          const data = await res.json();
-          if (data.Response === 'False') throw new Error('Movie not found');
-
-          setMovies(data.Search);
-        } catch (err) {
-          setError(err.message);
-        } finally {
-          setIsLoading(false);
-        }
-      };
-
-      if (query.length < 3) {
-        setMovies([]);
-        setError('');
-        return;
-      }
-      fetchMovies();
-    },
-    [query]
-  );
+  }
 
   return (
     <>
@@ -121,6 +90,14 @@ const Logo = () => {
 };
 
 const Search = ({ query, setQuery }) => {
+  const inputEle = useRef(null);
+
+  useKey('Enter', function () {
+    if (document.activeElement === inputEle.current) return;
+    inputEle.current.focus();
+    setQuery('');
+  });
+
   return (
     <input
       className="search"
@@ -128,6 +105,7 @@ const Search = ({ query, setQuery }) => {
       placeholder="Search movies..."
       value={query}
       onChange={(e) => setQuery(e.target.value)}
+      ref={inputEle}
     />
   );
 };
@@ -209,6 +187,8 @@ const MovieDetails = ({ selectedId, onDeselect, onAddWatchList, watched }) => {
     onDeselect();
   };
 
+  useKey('escape', onDeselect);
+
   useEffect(
     function () {
       async function getMovieDetails() {
@@ -232,6 +212,11 @@ const MovieDetails = ({ selectedId, onDeselect, onAddWatchList, watched }) => {
   useEffect(() => {
     if (!title) return;
     document.title = `Movie | ${title}`;
+
+    // cleanup function that is returned from useEffect Hook
+    return function () {
+      document.title = 'usePopcorn';
+    };
   }, [title]);
 
   return (

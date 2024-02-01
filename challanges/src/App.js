@@ -7,38 +7,24 @@ import StarRating from './StarRating';
 import TextExpander from './TextExpander';
 import DateRange from './DateRange';
 import CurrencyConverter from './CurrencyConverter';
+import GeoLocation from './GeoLocation';
 
 const App = () => {
   return (
     <>
       <div className="container">
-        <p className="title">Challange #1 - User Profile</p>
-        <Profile />
+        <p className="title">Challange #10 - Geo Location</p>
+        <GeoLocation />
       </div>
 
       <div className="container">
-        <p className="title">Challange #2 - Counter</p>
-        <Counter />
+        <p className="title">Challange #9 - Currency Converter</p>
+        <CurrencyConverter />
       </div>
 
       <div className="container">
-        <p className="title">Challange #3 - Flash Card</p>
-        <FlashCard />
-      </div>
-
-      <div className="container">
-        <p className="title">Challange #4 - Accordion</p>
-        <Accordion />
-      </div>
-
-      <div className="container">
-        <p className="title">Challange #5 - Tip Calculator</p>
-        <TipCalculator />
-      </div>
-
-      <div className="container">
-        <p className="title">Challange #6 - Star Rating</p>
-        <StarRating />
+        <p className="title">Challange #8 - Date Range</p>
+        <DateRange />
       </div>
 
       <div className="container">
@@ -74,13 +60,33 @@ const App = () => {
       </div>
 
       <div className="container">
-        <p className="title">Challange #8 - Date Range</p>
-        <DateRange />
+        <p className="title">Challange #6 - Star Rating</p>
+        <StarRating />
       </div>
 
       <div className="container">
-        <p className="title">Challange #9 - Currency Converter</p>
-        <CurrencyConverter />
+        <p className="title">Challange #5 - Tip Calculator</p>
+        <TipCalculator />
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #4 - Accordion</p>
+        <Accordion />
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #3 - Flash Card</p>
+        <FlashCard />
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #2 - Counter</p>
+        <Counter />
+      </div>
+
+      <div className="container">
+        <p className="title">Challange #1 - User Profile</p>
+        <Profile />
       </div>
     </>
   );
