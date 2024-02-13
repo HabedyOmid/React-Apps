@@ -8,10 +8,15 @@ import TextExpander from './TextExpander';
 import DateRange from './DateRange';
 import CurrencyConverter from './CurrencyConverter';
 import GeoLocation from './GeoLocation';
+import BankAccount from './BankAccount';
 
 const App = () => {
   return (
     <>
+      <div className="container">
+        <p className="title">Challange #11 - Bank Account useReduce()</p>
+        <BankAccount />
+      </div>
       <div className="container">
         <p className="title">Challange #10 - Geo Location</p>
         <GeoLocation />

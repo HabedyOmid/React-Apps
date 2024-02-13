@@ -83,6 +83,10 @@ button {
   color: #fff;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  background-color: #cacaca;
+}
 button span {
   font-size: 16px;
   line-height: 1;

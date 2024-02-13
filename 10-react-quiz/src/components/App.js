@@ -124,7 +124,6 @@ export default function App() {
             </Footer>
           </>
         )}
-
         {status === 'finished' && (
           <FinishScreen
             dispatch={dispatch}
