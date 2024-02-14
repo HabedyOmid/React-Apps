@@ -7,10 +7,6 @@ function AppLayout() {
     <div className={styles.app}>
       <Sidebar />
       <Map />
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
-      doloribus aperiam inventore quos soluta dolor adipisci quisquam ad, fugit
-      facere suscipit fugiat! Aspernatur sed maiores impedit, saepe quisquam
-      adipisci harum?
     </div>
   );
 }
