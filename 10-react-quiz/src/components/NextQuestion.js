@@ -1,8 +1,6 @@
 function NextQuestion({ dispatch, answer, index, totalQuestions }) {
   if (answer === null) return null;
 
-  console.log(index);
-
   if (index < totalQuestions - 1)
     return (
       <button
