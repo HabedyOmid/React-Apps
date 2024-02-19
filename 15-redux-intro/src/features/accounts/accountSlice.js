@@ -2,12 +2,19 @@ const accountInitialState = {
   balance: 0,
   loan: 0,
   loanPurpose: '',
+  isLoading: false,
 };
 
 export default function accountReducer(state = accountInitialState, action) {
   switch (action.type) {
+    case 'account/convertingCurrency':
+      return { ...state, isLoading: true };
     case 'account/deposite':
-      return { ...state, balance: state.balance + Number(action.payload) };
+      return {
+        ...state,
+        balance: state.balance + Number(action.payload),
+        isLoading: false,
+      };
     case 'account/withdraw':
       return { ...state, balance: state.balance - Number(action.payload) };
     case 'account/requestLoan':
@@ -35,6 +42,7 @@ export function deposite(amount, currency) {
 
   // return a function for thunk middleware for async operation
   return async function (dispatch, getState) {
+    dispatch({ type: 'account/convertingCurrency' });
     try {
       // API call
       const res = await fetch(
