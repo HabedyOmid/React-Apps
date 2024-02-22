@@ -22,7 +22,7 @@ export const fetchAddress = createAsyncThunk(
     const address = `${addressObj?.locality}, ${addressObj?.city} ${addressObj?.postcode}, ${addressObj?.countryName}`;
 
     return { position, address };
-  }
+  },
 );
 
 function getPosition() {
@@ -41,7 +41,7 @@ const userSlice = createSlice({
   },
   extraReducers: (builder) =>
     builder
-      .addCase(fetchAddress.pending, (state, action) => {
+      .addCase(fetchAddress.pending, (state) => {
         state.status = 'loading';
       })
       .addCase(fetchAddress.fulfilled, (state, action) => {
